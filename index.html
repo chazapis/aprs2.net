@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>APRS Tier 2 Network</title>
+
+    <!-- Bootstrap CSS -->
+    <link href="assets/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="index.css" rel="stylesheet">
+  </head>
+  <body>
+    <div class="d-flex flex-column flex-md-row-reverse p-3 px-md-4 mb-3 bg-white border-bottom shadow-sm">
+      <a class="btn btn-outline-warning" href="http://status.aprs2.net" target="_blank">Status Monitor</a>
+    </div>
+
+    <div class="container">
+      <div class="py-5 text-center">
+        <img class="d-block mx-auto mb-4" src="images/tier2gif-mid.gif" alt="APRS Tier 2 logo">
+        <p class="lead">Serving the worldwide APRS internet community and its 30,000+ users since 2003.</p>
+      </div>
+
+      <div class="row">
+        <div class="col-md-4 order-md-2 mb-4">
+          <div class="card mb-3">
+            <div class="card-body alert-warning">
+              <h5 class="card-title text-dark">Status Monitor</h5>
+              <p class="card-text text-dark">Click <a href="http://status.aprs2.net" target="_blank">here</a> for the full list of T2 Servers and countries including server status.</p>
+            </div>
+            <ul class="list-group list-group-flush">
+              <li class="list-group-item"><strong>Users</strong><div class="float-right">7198</div></li>
+              <li class="list-group-item"><strong>Kb/s out</strong><div class="float-right">691.70</div></li>
+              <li class="list-group-item"><strong>Kb/s in</strong><div class="float-right">380.09</div></li>
+            </ul>
+            <div class="card-body">
+              <p class="card-text small">The user counts only reflect users directly connected to the top level leaf servers and not users on sub-servers within the network.</p>
+            </div>
+          </div>
+
+          <div class="card">
+            <div class="card-body alert-warning">
+              <h5 class="card-title text-dark" id="rotate">Regional Rotate Addresses</h5>
+              <p class="card-text text-dark">Please use one of the following addresses to connect:</p>
+            </div>
+            <ul class="list-group list-group-flush">
+              <li class="list-group-item"><strong>North America</strong><div class="float-right">noam.aprs2.net</div></li>
+              <li class="list-group-item"><strong>South America</strong><div class="float-right">soam.aprs2.net</div></li>
+              <li class="list-group-item"><strong>Europe &amp; Africa</strong><div class="float-right">euro.aprs2.net</div></li>
+              <li class="list-group-item"><strong>Asia</strong><div class="float-right">asia.aprs2.net</div></li>
+              <li class="list-group-item"><strong>Oceania</strong><div class="float-right">aunz.aprs2.net</div></li>
+            </ul>
+            <div class="card-body">
+              <p class="card-text small">All users should be connecting to port 14580 the <a href="http://www.aprs-is.net/javAPRSFilter.aspx" target="_blank">client-defined filter</a> port.</p>
+            </div>
+            <!-- <div class="card-body">
+              <p class="card-text small">The Tier 2 Network servers offer the standard ports of APRS-IS, but some of them also offer unique specialized ports. It is recommended that you check the 14501 stats page for each server to see exactly what ports are being offered.</p>
+            </div> -->
+          </div>
+        </div>
+
+        <div class="col-md-8 order-md-1">
+          <p>The mission of the Tier 2 Network is to provide <strong>reliable access to the APRS Internet Service</strong> for users around the world. With <strong>more than 80 servers worldwide</strong>, collecting and redistributing APRS traffic over the Internet, Tier 2 is the optimum choice for all APRS-IS users.</p>
+          <p>The Tier 2 Network utilizes <strong>regional rotate addresses</strong> to better serve our users. Based on the model of packet radio regions, we have selected <a href="#rotate">five addresses</a> to reflect servers within the major regions of the world. When using your favorite APRS client software, please <a href="#rotate">select</a> the appropriate address for your region.</p>
+          <p>To view real-time position information, weather data, telemetry and messages on the web, visit <a href="https://aprs.fi" target="_blank">aprs.fi</a>.</p>
+
+          <h4 id="history">Brief History</h4>
+          <p>In the summer of 2000, when the APRS Internet Service was still in its infancy, it became apparent that there would need to be a different approach to how data was delivered. During the next couple of years, a few server sysops got together and figured out how to apply a tiered approach to the server configuration. Different software packages were tried, and finally <a href="http://www.aprs-is.net/javAPRSSrvr/" target="_blank">javAPRSSrvr</a> (by Pete Loveall, AE5PL) appeared as the most viable piece of APRS server software.</p>
+          <p>In addition to a tiered setup in which "core" Tier 1 servers would serve "secondary" Tier 2 servers which in turn would serve end-users, the filtered-feed port 14580 was created with the help of javAPRSFilter written by Roger Bille, SM5NRK. In July 2003, the aprs2.net domain was registered, and the APRS Tier2 Network was born with five servers in the second tier. The service quickly grew in demand, and more servers were added as needed. Most servers now have migrated to <a href="http://he.fi/aprsc/" target="_blank">aprsc</a> (by Matti Aarnio, OH2MQK, and Heikki Hannikainen, OH7LZB).</p>
+          <div class="row justify-content-center mt-4 mb-2">
+            <div class="col-md-10">
+              <figure class="figure">
+                <img class="figure-img img-fluid" src="images/network.png" alt="APRS Tier 2 structure">
+                <figcaption class="figure-caption">The rotate addresses point to regional servers, which communicate with the core via a layer of T2 hubs. The T2 network currently has 5 hubs and over 80 regional servers distributed worldwide, connecting to the 9 core servers.</figcaption>
+              </figure>
+            </div>
+          </div>
+          <p>The T2 network now offers a user/load balancing system to ensure the most efficient use of the T2 servers. This in turn means that in the case of any server outages users are redistributed amongst the other T2 servers. The network has its own cross-connected backbone between the T2 hubs. The majority of our servers are based in Data Centers with redundant power and feeds. There are strict guidlines for becoming a T2 Server Sysop ensuring the best quality of servers and bandwidth.</p>
+          <p>Though our approach has changed and adapted through the years, the Tier2 service remains committed to providing <strong>top-quality internet service to all APRS clients worldwide</strong>.</p>
+        </div>
+      </div>
+
+      <footer class="pt-4 my-md-5 pt-md-5 border-top">
+        <div class="row">
+          <div class="col-12 col-md">
+            <small class="d-block mb-3 text-muted">Tier2, T2, aprs2.net &copy; Phillip Pacier, AD6NH - <a class="text-muted" href="https://https://github.com/chazapis/aprs2.net" target="_blank">Page source</a></small>
+          </div>
+        </div>
+      </footer>
+    </div>
+  </body>
+
+  <!-- jQuery first, then Bootstrap JS with Popper.js -->
+  <script src="assets/js/jquery-3.3.1.min.js"></script>
+  <script src="assets/js/bootstrap.bundle.min.js"></script>
+  <script>
+$(function () {
+  $('a[href*="#"]:not([href="#"])').click(function() {
+    if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
+      var target = $(this.hash);
+      target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
+      if (target.length) {
+        $('html, body').animate({
+          scrollTop: target.offset().top - 22
+        }, 500);
+        return false;
+      }
+    }
+  });
+})
+  </script>
+</html>
